@@ -14,6 +14,9 @@ func main(){
 	//fmt.Println(global.CF)
 	//fmt.Println(global.MyDB)
 
+	if !global.CF.Gin.Debug{
+		gin.SetMode(gin.ReleaseMode)
+	}
 	r := gin.Default()
 	r.LoadHTMLGlob("../html/index.html")
 	r.StaticFS("/static", http.Dir("../html/static"))

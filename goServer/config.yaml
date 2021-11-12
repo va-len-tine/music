@@ -8,6 +8,7 @@ mysql:
 gin:
   host: '0.0.0.0'
   port: '80'
+  debug: false
 
 log:
   outputfile: false

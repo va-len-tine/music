@@ -11,6 +11,7 @@ type Mysql struct {
 type Gin struct {
 	Host	 string `json:"host"`
 	Port 		string `json:"port"`
+	Debug    bool `json:"debug"`
 }
 
 type Log struct{
