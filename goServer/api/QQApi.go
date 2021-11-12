@@ -15,7 +15,7 @@ func QQApi(kw string) []map[string]string{
 	resp,err := http.Get(uri)
 	if err != nil{
 		var result []map[string]string
-		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]string{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -39,7 +39,7 @@ func QQApi(kw string) []map[string]string{
 	resp,err = http.Get("http://localhost:3300/song/urls?id=" + ids)
 	if err != nil{
 		var result []map[string]string
-		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]string{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -59,7 +59,7 @@ func QQApi(kw string) []map[string]string{
 	}
 	if len(res1) == 0{
 		var result []map[string]string
-		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]string{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}

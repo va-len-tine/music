@@ -16,7 +16,7 @@ func NeteaseApi(kw string) []map[string]interface{}{
 	resp,err := http.Get(uri)
 	if err != nil{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -41,7 +41,7 @@ func NeteaseApi(kw string) []map[string]interface{}{
 	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
 	if err != nil{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -64,7 +64,7 @@ func NeteaseApi(kw string) []map[string]interface{}{
 
 	if len(res2) == 0{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -77,7 +77,7 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 	resp,err := http.Get(uri)
 	if err != nil{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -102,7 +102,7 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
 	if err != nil{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -125,7 +125,7 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 
 	if len(res2) == 0{
 		var result []map[string]interface{}
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}

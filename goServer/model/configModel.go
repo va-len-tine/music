@@ -21,6 +21,7 @@ type Log struct{
 
 type Local struct {
 	Defaultmusic string `json:"defaultmusic"`
+	Tips string `json:"tips"`
 }
 
 type ConfigServer struct {

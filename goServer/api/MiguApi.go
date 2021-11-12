@@ -15,7 +15,7 @@ func MiguApi(kw string) []map[string]interface{}{
 	uri := "http://localhost:3400/search?keyword=" + url.QueryEscape(kw)
 	resp,err := http.Get(uri)
 	if err != nil{
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
@@ -35,7 +35,7 @@ func MiguApi(kw string) []map[string]interface{}{
 	}
 
 	if len(result) == 0{
-		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		m := map[string]interface{}{"author":"","name":global.CF.Local.Tips,"pic":"","src":global.CF.Local.Defaultmusic}
 		result = append(result, m)
 		return result
 	}
