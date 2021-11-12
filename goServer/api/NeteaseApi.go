@@ -1,0 +1,101 @@
+package api
+
+import (
+	"encoding/json"
+	"goServer/error"
+	"goServer/model"
+	"io"
+	"net/http"
+	"net/url"
+	"strconv"
+	"strings"
+)
+
+func NeteaseApi(kw string) []map[string]interface{}{
+	uri := "http://localhost:3000/cloudsearch?keywords=" + url.QueryEscape(kw)
+	resp,err := http.Get(uri)
+	error.HandleErr(err,"请求出错")
+	defer resp.Body.Close()
+	bytes,_ := io.ReadAll(resp.Body)
+	var v2 model.Netease2
+	err = json.Unmarshal(bytes,&v2)
+	ids := ""
+	var res []map[string]interface{}
+	for _,item := range v2.Result.Songs{
+		m := make(map[string]interface{})
+		m["name"] = item.Name
+		m["author"] = item.Ar[0].Name
+		m["pic"] = item.Al.PicURL
+		m["src"] = ""
+		m["id"] = item.ID
+		ids = ids + strconv.Itoa(item.ID) + ","
+		res = append(res, m)
+	}
+	ids = strings.TrimRight(ids,",")
+
+	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
+	error.HandleErr(err,"请求出错")
+	defer resp.Body.Close()
+	bytes,_ = io.ReadAll(resp.Body)
+	var v3 model.Netease3
+	err = json.Unmarshal(bytes,&v3)
+	res1 := v3.Data
+
+	var res2 []map[string]interface{}
+	for _,i := range res{
+		for _,j := range res1{
+			if i["id"] == j.ID && j.URL != ""{
+				i["src"] = j.URL
+				res2 = append(res2, i)
+				break
+			}
+		}
+	}
+
+	return res2
+}
+
+
+func NeteaseApiTop(kw string) []map[string]interface{}{
+	uri := "http://localhost:3000/playlist/detail?id=" + url.QueryEscape(kw)
+	resp,err := http.Get(uri)
+	error.HandleErr(err,"请求出错")
+	defer resp.Body.Close()
+	bytes,_ := io.ReadAll(resp.Body)
+	var v1 model.Netease1
+	err = json.Unmarshal(bytes,&v1)
+	ids := ""
+	var res []map[string]interface{}
+	for _,item := range v1.Playlist.Tracks{
+		m := make(map[string]interface{})
+		m["name"] = item.Name
+		m["author"] = item.Ar[0].Name
+		m["pic"] = item.Al.PicURL
+		m["src"] = ""
+		m["id"] = item.ID
+		ids = ids + strconv.Itoa(item.ID) + ","
+		res = append(res, m)
+	}
+	ids = strings.TrimRight(ids,",")
+
+	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
+	error.HandleErr(err,"请求出错")
+	defer resp.Body.Close()
+	bytes,_ = io.ReadAll(resp.Body)
+	var v3 model.Netease3
+	err = json.Unmarshal(bytes,&v3)
+	res1 := v3.Data
+
+	var res2 []map[string]interface{}
+	for _,i := range res{
+		for _,j := range res1{
+			if i["id"] == j.ID && j.URL != ""{
+				i["src"] = j.URL
+				res2 = append(res2, i)
+				break
+			}
+		}
+	}
+
+	return res2
+}
