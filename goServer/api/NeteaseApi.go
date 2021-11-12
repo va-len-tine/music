@@ -62,6 +62,12 @@ func NeteaseApi(kw string) []map[string]interface{}{
 		}
 	}
 
+	if len(res2) == 0{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	return res2
 }
 
@@ -117,5 +123,11 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 		}
 	}
 
+	if len(res2) == 0{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	return res2
 }

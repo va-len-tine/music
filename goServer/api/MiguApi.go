@@ -33,5 +33,11 @@ func MiguApi(kw string) []map[string]interface{}{
 			result = append(result, m)
 		}
 	}
+
+	if len(result) == 0{
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	return result
 }

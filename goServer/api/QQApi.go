@@ -57,5 +57,11 @@ func QQApi(kw string) []map[string]string{
 			res1 = append(res1, i)
 		}
 	}
+	if len(res1) == 0{
+		var result []map[string]string
+		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	return res1
 }
