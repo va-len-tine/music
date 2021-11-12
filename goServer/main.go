@@ -14,18 +14,6 @@ func main(){
 	//fmt.Println(global.CF)
 	//fmt.Println(global.MyDB)
 
-	//kw := "王力宏"
-	//
-	//r2 := QQApi(kw)
-	//fmt.Println(len(r2), r2)
-	//
-	//r3 := NeteaseApi(kw)
-	//fmt.Println(len(r3), r3)
-	//
-	//r1 := MiguApi(kw)
-	//fmt.Println(len(r1), r1)
-
-
 	r := gin.Default()
 	r.LoadHTMLGlob("../html/index.html")
 	r.StaticFS("/static", http.Dir("../html/static"))

@@ -13,3 +13,6 @@ log:
   outputfile: false
   logname: 'music.log'
   logprefix: '[love-music]'
+
+local:
+  defaultmusic: 'https://cp-sycdn.kuwo.cn/fd8387b04bf67877e46a24445d126ce4/618e8911/resource/n1/73/12/4031075825.mp3'

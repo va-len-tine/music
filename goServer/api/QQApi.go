@@ -2,9 +2,9 @@ package api
 
 import (
 	"encoding/json"
+	"goServer/global"
 	"goServer/model"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"strings"
@@ -13,10 +13,11 @@ import (
 func QQApi(kw string) []map[string]string{
 	uri := "http://localhost:3300/search?key=" + url.QueryEscape(kw)
 	resp,err := http.Get(uri)
-	//error.HandleErr(err,"请求出错")
 	if err != nil{
-		log.Println("请求出错", ":", err)
-		return nil
+		var result []map[string]string
+		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
 	}
 	defer resp.Body.Close()
 	bytes,_ := io.ReadAll(resp.Body)
@@ -36,10 +37,11 @@ func QQApi(kw string) []map[string]string{
 	}
 	ids = strings.TrimRight(ids,",")
 	resp,err = http.Get("http://localhost:3300/song/urls?id=" + ids)
-	//error.HandleErr(err,"请求出错")
 	if err != nil{
-		log.Println("请求出错", ":", err)
-		return nil
+		var result []map[string]string
+		m := map[string]string{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
 	}
 	defer resp.Body.Close()
 	bytes,_ = io.ReadAll(resp.Body)

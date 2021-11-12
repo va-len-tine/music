@@ -2,7 +2,7 @@ package api
 
 import (
 	"encoding/json"
-	"goServer/error"
+	"goServer/global"
 	"goServer/model"
 	"io"
 	"net/http"
@@ -14,7 +14,12 @@ import (
 func NeteaseApi(kw string) []map[string]interface{}{
 	uri := "http://localhost:3000/cloudsearch?keywords=" + url.QueryEscape(kw)
 	resp,err := http.Get(uri)
-	error.HandleErr(err,"请求出错")
+	if err != nil{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	defer resp.Body.Close()
 	bytes,_ := io.ReadAll(resp.Body)
 	var v2 model.Netease2
@@ -34,7 +39,12 @@ func NeteaseApi(kw string) []map[string]interface{}{
 	ids = strings.TrimRight(ids,",")
 
 	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
-	error.HandleErr(err,"请求出错")
+	if err != nil{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	defer resp.Body.Close()
 	bytes,_ = io.ReadAll(resp.Body)
 	var v3 model.Netease3
@@ -59,7 +69,12 @@ func NeteaseApi(kw string) []map[string]interface{}{
 func NeteaseApiTop(kw string) []map[string]interface{}{
 	uri := "http://localhost:3000/playlist/detail?id=" + url.QueryEscape(kw)
 	resp,err := http.Get(uri)
-	error.HandleErr(err,"请求出错")
+	if err != nil{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	defer resp.Body.Close()
 	bytes,_ := io.ReadAll(resp.Body)
 	var v1 model.Netease1
@@ -79,7 +94,12 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 	ids = strings.TrimRight(ids,",")
 
 	resp,err = http.Get("http://localhost:3000/song/url?id=" + ids)
-	error.HandleErr(err,"请求出错")
+	if err != nil{
+		var result []map[string]interface{}
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	defer resp.Body.Close()
 	bytes,_ = io.ReadAll(resp.Body)
 	var v3 model.Netease3

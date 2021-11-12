@@ -19,8 +19,13 @@ type Log struct{
 	Logprefix string	`json:"logprefix"`
 }
 
+type Local struct {
+	Defaultmusic string `json:"defaultmusic"`
+}
+
 type ConfigServer struct {
 	Mysql Mysql `structure:"mysql" json:"mysql" yaml:"mysql"`
 	Gin      Gin    `json:"gin"`
 	Log Log `json:"log"`
+	Local Local `json:"local"`
 }

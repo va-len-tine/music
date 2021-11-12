@@ -2,7 +2,7 @@ package api
 
 import (
 	"encoding/json"
-	"goServer/error"
+	"goServer/global"
 	"goServer/model"
 	"io"
 	"net/http"
@@ -11,9 +11,14 @@ import (
 
 func MiguApi(kw string) []map[string]interface{}{
 	result := make([]map[string]interface{},0)
+
 	uri := "http://localhost:3400/search?keyword=" + url.QueryEscape(kw)
 	resp,err := http.Get(uri)
-	error.HandleErr(err,"请求出错")
+	if err != nil{
+		m := map[string]interface{}{"author":"","name":"出了点小意外...","pic":"","src":global.CF.Local.Defaultmusic}
+		result = append(result, m)
+		return result
+	}
 	defer resp.Body.Close()
 	bytes,_ := io.ReadAll(resp.Body)
 	var v model.Migu
