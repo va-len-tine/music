@@ -24,6 +24,7 @@ func startGin(){
 	r := gin.Default()
 	r.LoadHTMLGlob("../html/index.html")
 	r.StaticFS("/static", http.Dir("../html/static"))
+	r.StaticFS("/music", http.Dir("./music"))
 
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
