@@ -16,6 +16,6 @@ log:
   logprefix: '[love-html]'
 
 local:
-  defaultmusic: 'http://39.101.203.25/file/%E9%87%91%E7%8E%89%E8%89%AF%E7%BC%98.m4a'
+  defaultmusic: 'http://39.101.203.25/file/金玉良缘.m4a'
   qqdefaultpic: 'http://39.101.203.25/file/qq音乐.jpg'
   tips : '服务器出了点小意外。。。'
