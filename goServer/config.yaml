@@ -13,9 +13,9 @@ gin:
 log:
   outputfile: true
   logname: 'error.log'
-  logprefix: '[love-music]'
+  logprefix: '[love-html]'
 
 local:
-  defaultmusic: 'http://39.101.203.25/music/%E9%87%91%E7%8E%89%E8%89%AF%E7%BC%98.m4a'
-  qqdefaultpic: 'http://y.gtimg.cn/music/photo_new/T001R150x150M000004AtK8d26riOl_1.jpg'
+  defaultmusic: 'http://39.101.203.25/html/%E9%87%91%E7%8E%89%E8%89%AF%E7%BC%98.m4a'
+  qqdefaultpic: 'http://y.gtimg.cn/html/photo_new/T001R150x150M000004AtK8d26riOl_1.jpg'
   tips : '服务器出了点小意外。。。'

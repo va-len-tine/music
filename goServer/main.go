@@ -22,9 +22,9 @@ func startGin(){
 		gin.SetMode(gin.ReleaseMode)
 	}
 	r := gin.Default()
-	r.LoadHTMLGlob("../html/index.html")
-	r.StaticFS("/static", http.Dir("../html/static"))
-	r.StaticFS("/music", http.Dir("./music"))
+	r.LoadHTMLGlob("../html/unpackage/dist/build/h5/index.html")
+	r.StaticFS("/static", http.Dir("../html/unpackage/dist/build/h5/static"))
+	//r.StaticFS("/html", http.Dir("./html"))
 
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
