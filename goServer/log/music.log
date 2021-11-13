@@ -1,2 +1,0 @@
-[love-music]2021/11/12 15:36:27 main.go:35: 请求出错:Get "http:///localhost:3300/search?key=%E7%8E%8B%E5%8A%9B%E5%AE%8F": http: no Host in request URL
-[love-music]2021/11/12 15:36:38 main.go:35: 请求出错:Get "http:///localhost:3300/search?key=%E7%8E%8B%E5%8A%9B%E5%AE%8F": http: no Host in request URL

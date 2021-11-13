@@ -11,8 +11,8 @@ gin:
   debug: false
 
 log:
-  outputfile: false
-  logname: 'music.log'
+  outputfile: true
+  logname: 'error.log'
   logprefix: '[love-music]'
 
 local:
