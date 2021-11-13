@@ -1,8 +1,0 @@
-/root/goProject/love-music/goServer <nil>
-[GIN] 2021/11/13 - 11:17:45 | 200 |  827.012932ms |   113.66.248.67 | GET      "/migu/api?keyword=%E7%8E%8B%E5%8A%9B%E5%AE%8F"
-[GIN] 2021/11/13 - 11:17:50 | 200 |  528.109941ms |   113.66.248.67 | GET      "/qq/api?keyword=%E7%8E%8B%E5%8A%9B%E5%AE%8F"
-[GIN] 2021/11/13 - 11:18:09 | 200 |  907.304476ms |   113.66.248.67 | GET      "/qq/api?keyword=123412412"
-/root/goProject/love-music/goServer <nil>
-2021/11/13 11:19:30 配置文件初始化失败:open onfig.yaml: no such file or directory
-/root/goProject/love-music/goServer <nil>
-[GIN] 2021/11/13 - 11:22:39 | 200 |  965.385191ms |   113.66.248.67 | GET      "/qq/api?keyword=123412412"

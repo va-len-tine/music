@@ -2,4 +2,4 @@ MiguMusicApi/
 NeteaseCloudMusicApi/
 QQMusicApi/
 goServer/main
-goServer/log/*
+goServer/log/
