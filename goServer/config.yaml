@@ -17,4 +17,5 @@ log:
 
 local:
   defaultmusic: 'https://cp-sycdn.kuwo.cn/fd8387b04bf67877e46a24445d126ce4/618e8911/resource/n1/73/12/4031075825.mp3'
+  qqdefaultpic: 'http://y.gtimg.cn/music/photo_new/T001R150x150M000004AtK8d26riOl_1.jpg'
   tips : '服务器出了点小意外。。。'

@@ -29,7 +29,7 @@ func QQApi(kw string) []map[string]string{
 		m := make(map[string]string)
 		m["name"] = item.Songname
 		m["author"] = item.Singer[0].Name
-		m["pic"] = ""
+		m["pic"] = global.CF.Local.Qqdefaultpic
 		m["src"] = ""
 		m["id"] = item.Songmid
 		ids = ids + item.Songmid + ","

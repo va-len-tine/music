@@ -11,7 +11,7 @@ func main(){
 	global.InitViper() //初始化全局配置
 	global.InitLog()	//初始化日志器
 	//global.MyDB = global.InitDB()	//初始化数据库对象
-	//fmt.Println(global.CF)
+	//fmt.Println(global.CF.Local.Qqdefaultpic)
 	//fmt.Println(global.MyDB)
 
 	startGin()
