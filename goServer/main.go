@@ -14,6 +14,10 @@ func main(){
 	//fmt.Println(global.CF)
 	//fmt.Println(global.MyDB)
 
+	startGin()
+}
+
+func startGin(){
 	if !global.CF.Gin.Debug{
 		gin.SetMode(gin.ReleaseMode)
 	}
@@ -45,4 +49,3 @@ func main(){
 	})
 	r.Run(global.CF.Gin.Host + ":" + global.CF.Gin.Port)
 }
-

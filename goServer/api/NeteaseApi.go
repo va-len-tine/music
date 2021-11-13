@@ -121,6 +121,9 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 				break
 			}
 		}
+		if len(res2)==20{
+			break
+		}
 	}
 
 	if len(res2) == 0{
