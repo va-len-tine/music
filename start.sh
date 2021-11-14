@@ -11,6 +11,6 @@ cd ../goServer/
 go build main.go
 nohup ./main >>./log/access.log 2>&1 &
 
-sleep 5
+sleep 3
 bash ../flushCookie.sh
 netstat -nltp
