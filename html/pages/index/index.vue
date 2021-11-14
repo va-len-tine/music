@@ -42,7 +42,7 @@
 		data() {
 			return {
 				dataList: [],			//播放列表
-				audio: ['http://m7.music.126.net/20210511215751/f1d81bd47c23678520443b02c4845f14/ymusic/0052/5309/0152/782cc23c52dcb1ccbc0868ceaf2d56c4.mp3'],
+				audio: ['http://39.101.203.25/file/危险派对.mp3'],
 				now: 0,					//默认播放歌曲
 				search_type: "migu",	//默认搜索类型:migu
 			}
