@@ -79,7 +79,7 @@
 			//搜索子组件返回歌曲，进行页面渲染
 			flush_data(r){
 				uni.request({
-					url:'http://39.101.203.25/' + this.search_type + '/api?keyword=' + r,
+					url:'http://youthsweet.com/' + this.search_type + '/api?keyword=' + r,
 					method:'GET',
 					data:{},
 					success: (res) => {
@@ -98,7 +98,7 @@
 			//飙升榜...
 			get_list(s){
 				uni.request({
-					url:'http://39.101.203.25/netease/api?keyword=' + s,
+					url:'http://youthsweet.com/netease/api?keyword=' + s,
 					method:'GET',
 					data:{},
 					success: (res) => {
@@ -112,7 +112,7 @@
 		//打开页面时，初始化数据
 		beforeCreate() {
 			uni.request({
-				url:'http://39.101.203.25/netease/api?keyword=' + "抖音",
+				url:'http://youthsweet.com/netease/api?keyword=' + "抖音",
 				method:'GET',
 				data:{},
 				success: (res) => {
