@@ -14,3 +14,4 @@ nohup ./main >>./log/access.log 2>&1 &
 sleep 3
 bash ../flushCookie.sh
 netstat -nltp
+systemctl restart nginx

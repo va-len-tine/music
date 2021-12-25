@@ -30,7 +30,7 @@ func NeteaseApi(kw string) []map[string]interface{}{
 		m := make(map[string]interface{})
 		m["name"] = item.Name
 		m["author"] = item.Ar[0].Name
-		m["pic"] = item.Al.PicURL
+		m["pic"] = strings.Replace(item.Al.PicURL,"http://", "https://", -1)
 		m["src"] = ""
 		m["id"] = item.ID
 		ids = ids + strconv.Itoa(item.ID) + ","
@@ -55,7 +55,7 @@ func NeteaseApi(kw string) []map[string]interface{}{
 	for _,i := range res{
 		for _,j := range res1{
 			if i["id"] == j.ID && j.URL != ""{
-				i["src"] = j.URL
+				i["src"] = strings.Replace(j.URL,"http://", "https://", -1)
 				res2 = append(res2, i)
 				break
 			}
@@ -91,7 +91,7 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 		m := make(map[string]interface{})
 		m["name"] = item.Name
 		m["author"] = item.Ar[0].Name
-		m["pic"] = item.Al.PicURL
+		m["pic"] = strings.Replace(item.Al.PicURL,"http://", "https://", -1)
 		m["src"] = ""
 		m["id"] = item.ID
 		ids = ids + strconv.Itoa(item.ID) + ","
@@ -116,7 +116,7 @@ func NeteaseApiTop(kw string) []map[string]interface{}{
 	for _,i := range res{
 		for _,j := range res1{
 			if i["id"] == j.ID && j.URL != ""{
-				i["src"] = j.URL
+				i["src"] = strings.Replace(j.URL,"http://", "https://", -1)
 				res2 = append(res2, i)
 				break
 			}
